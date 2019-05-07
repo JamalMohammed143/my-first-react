@@ -3,14 +3,18 @@ class Welcome extends React.Component {
     super(props)
     this.state = {
       left: "0",
-      top: "0"
+      top: "0",
+      isMobile: false
     };
   }
   componentDidMount() {
-    
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    this.setState({
+      isMobile: isMobile
+    });
   }
 
-  FlyingAnimation(event){
+  FlyingAnimation(event) {
     var mainWidth = window.innerWidth - 90;
     var mainHeight = window.innerHeight - 76;
 
@@ -27,11 +31,19 @@ class Welcome extends React.Component {
   }
 
   render() {
-    return <section>
-              <div className="fly-box" style={{left: this.state.left, top: this.state.top}} onMouseEnter={this.FlyingAnimation.bind(this)}>
+    if(this.state.isMobile){
+      return <section>
+              <div className="fly-box" style={{left: this.state.left, top: this.state.top}} onMouseDownCapture={this.FlyingAnimation.bind(this)}>
                 <img src="img/cartoon-fly.png" />
               </div>
         </section>
+    }else{
+      return <section>
+              <div className="fly-box" style={{left: this.state.left, top: this.state.top}} onMouseMove={this.FlyingAnimation.bind(this)}>
+                <img src="img/cartoon-fly.png" />
+              </div>
+        </section>
+    }
   }
 }
 ReactDOM.render(<Welcome/> , document.querySelector('#app'));
