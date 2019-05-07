@@ -33,7 +33,7 @@ class Welcome extends React.Component {
   render() {
     if(this.state.isMobile){
       return <section>
-              <div className="fly-box" style={{left: this.state.left, top: this.state.top}} onMouseDownCapture={this.FlyingAnimation.bind(this)}>
+              <div className="fly-box" style={{left: this.state.left, top: this.state.top}} onTouchStart={this.FlyingAnimation.bind(this)}>
                 <img src="img/cartoon-fly.png" />
               </div>
         </section>

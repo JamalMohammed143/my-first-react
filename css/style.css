@@ -13,10 +13,25 @@ section {
     position: relative;
     user-select: none;
     overflow: hidden;
+    user-select: none;
 }
 
 section {
-    cursor: url("../img/net.png") 20 20, auto;
+    background: url(../img/favicon.png) no-repeat;
+    background-color: #495057;
+    background-position: center center;
+    background-attachment: fixed;
+    cursor: url(../img/net.png) 20 20, auto;
+}
+
+.providedByText {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #ffc107;
+    font-size: 14px;
 }
 
 .fly-box {
@@ -26,6 +41,7 @@ section {
     padding: 30px;
     transition: all 0.5s ease-out;
     -webkit-transition: all 0.5s ease-out;
+    z-index: 1;
 }
 
 .fly-box::before {
