@@ -53,7 +53,7 @@ section::before {
     font-family: cursive;
     z-index: 0;
     line-height: 1;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .providedByText {
