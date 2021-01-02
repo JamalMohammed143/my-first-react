@@ -27,8 +27,8 @@ class Welcome extends React.Component {
     var randomLeft = Math.floor(Math.random() * (maximumWidth - minimumWidth + 1)) + minimumWidth;
     var randomTop = Math.floor(Math.random() * (maximumHeight - minimumHeight + 1)) + minimumHeight;
 
-    console.log('randomLeft', randomLeft);
-    console.log('randomTop', randomTop);
+    // console.log('randomLeft', randomLeft);
+    // console.log('randomTop', randomTop);
 
     // var randomLeft = Math.floor((Math.random() * mainWidth) + 1);
     // var randomTop = Math.floor((Math.random() * mainHeight) + 1);
@@ -43,19 +43,19 @@ class Welcome extends React.Component {
   }
 
   render() {
-    if(this.state.isMobile){
+    if (this.state.isMobile) {
       return <section>
-              <div className="fly-box mobile" style={{left: this.state.left, top: this.state.top}} onTouchStart={this.FlyingAnimation.bind(this)}>
-                <img src="img/cartoon-fly.png" />
-              </div>
-        </section>
-    }else{
+        <div className="fly-box mobile" style={{ left: this.state.left, top: this.state.top }} onTouchStart={this.FlyingAnimation.bind(this)}>
+          <img src="img/cartoon-fly.png" />
+        </div>
+      </section>
+    } else {
       return <section>
-              <div className="fly-box" style={{left: this.state.left, top: this.state.top}} onMouseMove={this.FlyingAnimation.bind(this)}>
-                <img src="img/cartoon-fly.png" />
-              </div>
-        </section>
+        <div className="fly-box" style={{ left: this.state.left, top: this.state.top }} onMouseMove={this.FlyingAnimation.bind(this)}>
+          <img src="img/cartoon-fly.png" />
+        </div>
+      </section>
     }
   }
 }
-ReactDOM.render(<Welcome/> , document.querySelector('#app'));
+ReactDOM.render(<Welcome />, document.querySelector('#app'));

@@ -44,9 +44,9 @@ section {
 
 section::before {
     content: "J";
-    color: #fff;
+    color: #00000033;
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: calc(100vh - 2rem);
@@ -121,4 +121,10 @@ section::before {
 
 .fly-box img {
     width: 80px;
+}
+
+@media (max-width: 768px) {
+    section::before {
+        font-size: calc(100vh - 8rem);
+    }
 }
