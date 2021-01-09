@@ -29,13 +29,19 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Main Style -->
     <link rel="stylesheet" href="css/style.min.css" />
-    <!-- <style>
-        body>div[style*="text-align"] {
+    <style>
+        /* body>div[style*="text-align"] {
             visibility: hidden;
             height: 0;
             overflow: hidden;
+        } */
+        pwa-install {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 10;
         }
-    </style> -->
+    </style>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
@@ -50,6 +56,7 @@
 <body>
     <div id="app"></div>
     <p class="providedByText">Made by <strong>Jamal Mohammed</strong></p>
+    <pwa-install></pwa-install>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -66,6 +73,8 @@
 
     <!-- Your custom script here -->
     <script type="text/babel" src="js/react.js"></script>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
 
     <script type="text/javascript">
         window.onload = function () {
