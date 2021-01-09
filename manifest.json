@@ -1,7 +1,7 @@
 {
     "name": "Jamal Game",
     "short_name": "JG",
-    "start_url": "/",
+    "start_url": "/my-first-react",
     "display": "standalone",
     "background_color": "#fff",
     "description": "Entertainment purpose",
