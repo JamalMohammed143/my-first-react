@@ -38,13 +38,24 @@
         pwa-install {
             position: fixed;
             bottom: 10px;
-            right: 10px;
+            left: 10px;
             z-index: 10;
+        }
+
+        pwa-install::part(openButton) {
+            background-color: green;
+            box-shadow: 0 11px 26px 0 rgba(0, 0, 0, .4);
+            border-radius: 5px;
+            display: inline-block;
+            min-width: 200px;
+            margin: 5px;
         }
     </style>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/my-first-react/service-worker.js').then(function (registration) {
+            navigator.serviceWorker.register('/my-first-react/service-worker.js', {
+                scope: '/'
+            }).then(function (registration) {
                 console.log('Registration successful, scope is:', registration.scope);
             }).catch(function (error) {
                 console.log('Service worker registration failed, error:', error);
